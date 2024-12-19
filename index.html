@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prepare for your New Jersey driving permit test with our comprehensive practice quiz and resources. Access manuals, test yourself, and book your knowledge test appointment easily.">
+    <meta name="keywords" content="New Jersey, driving permit test, knowledge test, driver manuals, traffic signs, defensive driving, practice test">
+    <meta name="author" content="Driver Test Site">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="New Jersey Driving Permit Practice Test">
+    <meta property="og:description" content="Comprehensive practice tests and resources for New Jersey driving permits. Learn, test, and book your appointment now.">
+    <meta property="og:image" content="favicon.png">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:type" content="website">
+    <title>New Jersey Driving Permit Practice Test - Manuals & Resources</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.webp" type="image/png">
+</head>
+<body>
+    <nav>
+        <div class="menu-container">
+            <div class="logo">Brand<span>Name</span></div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+            <ul class="menu">
+                <li><a href="#quiz">Take Test</a></li>
+                <li><a href="#manuals">Manuals</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://www.nj.gov/mvc/license/knowledgetest.htm" target="_blank">Book a Test</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="quiz">
+            <div id="quiz-container">
+                <div id="progress-bar">
+                    <div id="progress"></div>
+                </div>
+                <div id="question">Loading question...</div>
+                <ul id="answers"></ul>
+            </div>
+            <div id="results" style="display: none;">
+                <h2>Your Results</h2>
+                <p id="score">Your score will appear here</p>
+                <div id="wrong-answers">
+                    <h3>Questions You Got Wrong:</h3>
+                    <ul id="wrong-list"></ul>
+                </div>
+                <button id="retry-btn">Retake Test</button>
+            </div>
+        </section>
+
+        <aside id="manuals">
+            <h2>Driving Manuals</h2>
+            <div class="manual">
+                <h3>New Jersey Driver's Manual</h3>
+                <p>Learn all about road rules and regulations in New Jersey.</p>
+                <a href="NJ_drivermanual.pdf" class="download-btn" download>Download</a>
+            </div>
+            <div class="manual">
+                <h3>Traffic Signs Manual</h3>
+                <p>Understand common traffic signs and their meanings.</p>
+                <a href="Traffic_Signs_Manual.pdf" class="download-btn" download>Download</a>
+            </div>
+
+            <div class="manual">
+                <h3>Defensive Driving Techniques</h3>
+                <p>Learn how to drive safely and avoid accidents.</p>
+                <a href="Defensive_Driving_Techniques.pdf" class="download-btn" download>Download</a>
+            </div>
+        </aside>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What is the passing score for the NJ driving test?</h3>
+                <p>You need to answer at least 80% of the questions correctly to pass the test.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I book my NJ knowledge test?</h3>
+                <p>You can book your test online through the official <a href="https://www.nj.gov/mvc/license/knowledgetest.htm" target="_blank">MVC knowledge test page</a>.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What documents do I need for the knowledge test?</h3>
+                <p>You will need your 6 Points of ID, proof of address, and your social security number.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What happens if I fail the test?</h3>
+                <p>If you fail, you must wait at least 7 days before you can retake the test.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 New Jersey Permit Test Practice. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) {
+                    item.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
