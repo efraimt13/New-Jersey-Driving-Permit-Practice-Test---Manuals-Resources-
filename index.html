@@ -10,27 +10,24 @@
     <meta property="og:title" content="DrivingTestNJ - Ace Your NJ MVC Permit Exam!">
     <meta property="og:description" content="The ultimate free resource for the New Jersey MVC permit test. Updated 2025 questions, detailed explanations, and everything you need to pass on your first try at DrivingTestNJ.com.">
     <meta property="og:image" content="https://placehold.co/1200x630/10B981/FFFFFF?text=DrivingTestNJ.com">
-    <meta property="og:url" content="https://drivingtestnj.com/">
-    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://drivingtestnj.com/"> <meta property="og:type" content="website">
     <title>DrivingTestNJ - Ace Your NJ MVC Permit Exam!</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="https://placehold.co/32x32/10B981/FFFFFF?text=DTNJ" type="image/png">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-37683SRNTT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-37683SRNTT');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-37683SRNTT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-37683SRNTT');
+    </script>
     <style>
         /* Custom scrollbar for a cleaner look */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+            background: #1e293b; /* slate-800 for dark theme */
         }
         ::-webkit-scrollbar-thumb {
             background: #10B981; /* Tailwind green-500 */
@@ -49,7 +46,7 @@
             padding-bottom: 0;
         }
         .faq-item.open .faq-answer {
-            max-height: 500px; /* Adjust as needed */
+            max-height: 500px; /* Adjust if answers are longer */
             padding-top: 1rem;
             padding-bottom: 1rem;
         }
@@ -81,14 +78,14 @@
         .delay-300 { animation-delay: 0.3s; }
         .delay-400 { animation-delay: 0.4s; }
 
-
         /* Custom focus rings for better accessibility */
         .custom-focus-ring:focus {
             outline: 2px solid transparent;
             outline-offset: 2px;
             box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.5); /* Tailwind green-500 with opacity */
         }
-        .answer-btn.selected {
+        /* Quiz answer button states */
+        .answer-btn.selected { /* This class seems unused in current JS, but kept for potential future use */
             background-color: #059669; /* Tailwind green-600 */
             color: white;
             border-color: #047857; /* Tailwind green-700 */
@@ -103,13 +100,19 @@
             color: white !important;
             border-color: #DC2626 !important; /* Tailwind red-600 */
         }
+        /* Style for the list of wrong answers in results */
         #wrong-list li {
             border-left-width: 4px;
         }
+        /* Style for explanation text in feedback and results */
         .feedback-explanation {
-            font-size: 0.9rem;
+            font-size: 0.9rem; /* Slightly smaller for distinction */
             color: #cbd5e1; /* slate-300 */
             margin-top: 0.5rem;
+        }
+        /* Ensure sticky nav doesn't overlap content when jumping to sections */
+        html {
+            scroll-padding-top: 5rem; /* Adjust based on nav height (h-20 is 5rem) */
         }
     </style>
 </head>
@@ -120,7 +123,7 @@
             <div class="flex items-center justify-between h-20">
                 <div class="flex items-center">
                     <a href="https://drivingtestnj.com/" class="flex-shrink-0 flex items-center text-2xl font-bold text-green-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-label="DrivingTestNJ Logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-label="DrivingTestNJ Logo Shield">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                         DrivingTestNJ
@@ -132,11 +135,11 @@
                         <a href="#manuals-section" class="text-slate-300 hover:bg-green-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium custom-focus-ring transition-colors duration-150">Manuals</a>
                         <a href="#results-section-container" class="text-slate-300 hover:bg-green-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium custom-focus-ring transition-colors duration-150">Results</a>
                         <a href="#faq-section" class="text-slate-300 hover:bg-green-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium custom-focus-ring transition-colors duration-150">FAQ</a>
-                        <a href="https://www.nj.gov/mvc/license/knowledgetest.htm" target="_blank" class="bg-green-500 text-white hover:bg-green-600 px-4 py-2 rounded-md text-sm font-medium custom-focus-ring transition-colors duration-150 shadow-md hover:shadow-lg">Book MVC Test</a>
+                        <a href="https://www.nj.gov/mvc/license/knowledgetest.htm" target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white hover:bg-green-600 px-4 py-2 rounded-md text-sm font-medium custom-focus-ring transition-colors duration-150 shadow-md hover:shadow-lg">Book MVC Test</a>
                     </div>
                 </div>
                 <div class="-mr-2 flex md:hidden">
-                    <button type="button" id="mobile-menu-button" class="bg-slate-800 inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                    <button type="button" id="mobile-menu-button" class="bg-slate-800 inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-white custom-focus-ring" aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
                         <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -154,7 +157,7 @@
                 <a href="#manuals-section" class="text-slate-300 hover:bg-green-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium custom-focus-ring transition-colors duration-150">Manuals</a>
                 <a href="#results-section-container" class="text-slate-300 hover:bg-green-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium custom-focus-ring transition-colors duration-150">Results</a>
                 <a href="#faq-section" class="text-slate-300 hover:bg-green-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium custom-focus-ring transition-colors duration-150">FAQ</a>
-                <a href="https://www.nj.gov/mvc/license/knowledgetest.htm" target="_blank" class="bg-green-500 text-white hover:bg-green-600 block px-3 py-2 rounded-md text-base font-medium custom-focus-ring transition-colors duration-150 shadow-md">Book MVC Test</a>
+                <a href="https://www.nj.gov/mvc/license/knowledgetest.htm" target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white hover:bg-green-600 block px-3 py-2 rounded-md text-base font-medium custom-focus-ring transition-colors duration-150 shadow-md">Book MVC Test</a>
             </div>
         </div>
     </nav>
@@ -173,8 +176,7 @@
             </a>
         </section>
 
-        <section id="quiz-section" class="py-12 scroll-mt-20">
-            <div id="quiz-container" class="bg-slate-800 shadow-2xl rounded-xl p-6 md:p-10 max-w-4xl mx-auto fade-in-up delay-100">
+        <section id="quiz-section" class="py-12 scroll-mt-20"> <div id="quiz-container" class="bg-slate-800 shadow-2xl rounded-xl p-6 md:p-10 max-w-4xl mx-auto fade-in-up delay-100">
                 <div id="progress-bar-container" class="mb-6">
                     <div class="flex justify-between text-sm text-slate-400 mb-1">
                         <span>Progress</span>
@@ -189,14 +191,14 @@
                     <div id="answers" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         </div>
                 </div>
-                <div id="feedback-area" class="mt-4 text-center min-h-[48px]"> </div>
+                <div id="feedback-area" class="mt-4 text-center min-h-[48px]">
+                    </div>
                 <div class="mt-8 text-center">
                     <button id="next-question-btn" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-150 custom-focus-ring hidden">Next Question</button>
                 </div>
             </div>
 
-            <div id="results-section-container" class="bg-slate-800 shadow-2xl rounded-xl p-6 md:p-10 max-w-4xl mx-auto mt-12 hidden scroll-mt-20 fade-in-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-green-400">Test Results</h2>
+            <div id="results-section-container" class="bg-slate-800 shadow-2xl rounded-xl p-6 md:p-10 max-w-4xl mx-auto mt-12 hidden scroll-mt-20 fade-in-up"> <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-green-400">Test Results</h2>
                 <p id="score" class="text-2xl text-center mb-6"></p>
                 <div id="score-visual" class="mb-8 text-center">
                      <p id="pass-fail-message" class="text-2xl font-bold"></p>
@@ -218,7 +220,7 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-green-400 fade-in-up">Essential NJ Driving Resources</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-slate-800 shadow-xl rounded-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition-shadow duration-300 fade-in-up delay-100">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" role="img" aria-label="Book Icon">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v11.494m0 0a8.485 8.485 0 0011.92 0M12 17.747a8.485 8.485 0 01-11.92 0M12 6.253a8.485 8.485 0 0111.92 0M12 6.253L12 3M5.045 8.487A8.482 8.482 0 0112 5.192m7.022 3.295A8.479 8.479 0 0112 11.808m-7.022-3.295A8.479 8.479 0 0012 11.808" />
                     </svg>
                     <h3 class="text-xl font-semibold mb-2">New Jersey Driver's Manual</h3>
@@ -226,7 +228,7 @@
                     <a href="https://www.nj.gov/mvc/pdf/manuals/drivermanual.pdf" target="_blank" rel="noopener noreferrer" class="mt-auto bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-150 custom-focus-ring">Download PDF</a>
                 </div>
                 <div class="bg-slate-800 shadow-xl rounded-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition-shadow duration-300 fade-in-up delay-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" role="img" aria-label="Document Icon">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                     <h3 class="text-xl font-semibold mb-2">Traffic Signs & Signals</h3>
@@ -234,8 +236,8 @@
                     <a href="https://www.state.nj.us/mvc/pdf/manuals/Driver%20Manual%20-%20Chapter%204%20-%20Traffic%20Control.pdf" target="_blank" rel="noopener noreferrer" class="mt-auto bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-150 custom-focus-ring">View Signs PDF</a>
                 </div>
                 <div class="bg-slate-800 shadow-xl rounded-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition-shadow duration-300 fade-in-up delay-300">
-                     <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" role="img" aria-label="Identification Card Icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h3" />
                     </svg>
                     <h3 class="text-xl font-semibold mb-2">GDL Information</h3>
                     <p class="text-slate-400 mb-4 text-sm">Learn about NJ's Graduated Driver License program requirements.</p>
@@ -248,46 +250,46 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-green-400 fade-in-up">Permit Test FAQs</h2>
             <div class="max-w-3xl mx-auto space-y-4">
                 <div class="faq-item bg-slate-800 shadow-lg rounded-lg overflow-hidden fade-in-up delay-100">
-                    <button class="faq-question w-full flex justify-between items-center text-left p-5 md:p-6 custom-focus-ring">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-5 md:p-6 custom-focus-ring" aria-expanded="false" aria-controls="faq-answer-1">
                         <span class="text-lg font-semibold">What is the passing score for the NJ permit test?</span>
-                        <svg class="faq-icon h-6 w-6 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="faq-icon h-6 w-6 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
-                    <div class="faq-answer px-5 md:px-6 text-slate-300">
+                    <div id="faq-answer-1" class="faq-answer px-5 md:px-6 text-slate-300" role="region">
                         <p>To pass the NJ MVC knowledge test, you must answer at least 40 out of 50 questions correctly. This is an 80% score. Our practice tests help you aim higher!</p>
                     </div>
                 </div>
                 <div class="faq-item bg-slate-800 shadow-lg rounded-lg overflow-hidden fade-in-up delay-200">
-                    <button class="faq-question w-full flex justify-between items-center text-left p-5 md:p-6 custom-focus-ring">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-5 md:p-6 custom-focus-ring" aria-expanded="false" aria-controls="faq-answer-2">
                         <span class="text-lg font-semibold">How many questions are on the NJ permit test?</span>
-                         <svg class="faq-icon h-6 w-6 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                         <svg class="faq-icon h-6 w-6 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
-                    <div class="faq-answer px-5 md:px-6 text-slate-300">
+                    <div id="faq-answer-2" class="faq-answer px-5 md:px-6 text-slate-300" role="region">
                         <p>The official NJ MVC knowledge test consists of 50 multiple-choice questions. Our practice tests are designed to simulate this experience with 50 questions per test.</p>
                     </div>
                 </div>
-                 <div class="faq-item bg-slate-800 shadow-lg rounded-lg overflow-hidden fade-in-up delay-300">
-                    <button class="faq-question w-full flex justify-between items-center text-left p-5 md:p-6 custom-focus-ring">
+                <div class="faq-item bg-slate-800 shadow-lg rounded-lg overflow-hidden fade-in-up delay-300">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-5 md:p-6 custom-focus-ring" aria-expanded="false" aria-controls="faq-answer-3">
                         <span class="text-lg font-semibold">What documents do I need for the NJ MVC knowledge test?</span>
-                         <svg class="faq-icon h-6 w-6 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                         <svg class="faq-icon h-6 w-6 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
-                    <div class="faq-answer px-5 md:px-6 text-slate-300">
+                    <div id="faq-answer-3" class="faq-answer px-5 md:px-6 text-slate-300" role="region">
                         <p>You'll need to satisfy the 6 Points of ID verification, provide proof of address, and your social security number. Always check the official <a href="https://www.nj.gov/mvc/license/6pointid.htm" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">NJ MVC website</a> for the most current requirements before your appointment.</p>
                     </div>
                 </div>
                 <div class="faq-item bg-slate-800 shadow-lg rounded-lg overflow-hidden fade-in-up delay-400">
-                    <button class="faq-question w-full flex justify-between items-center text-left p-5 md:p-6 custom-focus-ring">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-5 md:p-6 custom-focus-ring" aria-expanded="false" aria-controls="faq-answer-4">
                         <span class="text-lg font-semibold">What happens if I fail the NJ permit test?</span>
-                         <svg class="faq-icon h-6 w-6 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                         <svg class="faq-icon h-6 w-6 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
-                    <div class="faq-answer px-5 md:px-6 text-slate-300">
+                    <div id="faq-answer-4" class="faq-answer px-5 md:px-6 text-slate-300" role="region">
                         <p>If you don't pass the knowledge test, you must wait at least 7 days before you can retake it. Use DrivingTestNJ.com to study the questions you missed and improve your score for the next attempt!</p>
                     </div>
                 </div>
@@ -297,15 +299,20 @@
 
     <footer class="bg-slate-900 border-t border-slate-700">
         <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-slate-400 text-sm">&copy; 2025 DrivingTestNJ.com. All Rights Reserved. Your partner for NJ driving success.</p>
+            <p class="text-slate-400 text-sm">&copy; <span id="current-year">2025</span> DrivingTestNJ.com. All Rights Reserved. Your partner for NJ driving success.</p>
             <p class="text-slate-500 text-xs mt-1">This site, DrivingTestNJ.com, is for practice purposes only and is not affiliated with or endorsed by the New Jersey Motor Vehicle Commission (NJ MVC) or any government agency.</p>
         </div>
     </footer>
 
     <script>
         // --- Questions Data ---
+        // Array of question objects. Each object contains:
+        // question: The question text (string)
+        // options: An array of possible answers (array of strings)
+        // answer: The correct answer (string)
+        // explanation: A detailed explanation for the correct answer (string)
         const questions = [
-            // Questions 1-40 from previous version, with explanations added
+            // Questions 1-40 (original set)
             { question: "What does a solid red traffic light signify?", options: ["Stop", "Yield", "Go if clear", "Slow down"], answer: "Stop", explanation: "A solid red light means you must come to a complete stop before the intersection or crosswalk and remain stopped until the light turns green and it's safe to proceed." },
             { question: "Upon approaching a stop sign, what is the correct action?", options: ["Slow significantly", "Come to a complete stop", "Honk and proceed", "Yield if traffic present"], answer: "Come to a complete stop", explanation: "A stop sign requires you to bring your vehicle to a complete halt before the marked stop line or crosswalk, or before entering the intersection if no lines are present." },
             { question: "What does a yellow traffic light indicate?", options: ["Stop immediately", "Prepare to stop, light will turn red", "Speed up to clear intersection", "Proceed with caution"], answer: "Prepare to stop, light will turn red", explanation: "A solid yellow light warns that the light is about to turn red. You should slow down and prepare to stop. Do not speed up to try to beat the light." },
@@ -335,7 +342,7 @@
             { question: "In NJ, who is required by the GDL law to wear a seat belt in the vehicle?", options: ["Only the driver", "Only front-seat passengers", "The driver and all passengers", "Only passengers under 18"], answer: "The driver and all passengers", explanation: "Under NJ's Graduated Driver License (GDL) program, the driver and ALL passengers (front and back seats) are required to wear seat belts." },
             { question: "It is illegal to pass another vehicle when:", options: ["You are on a multi-lane highway", "The vehicle ahead is turning left", "Your view is obstructed by a hill or curve, or at a railroad crossing or intersection", "The vehicle ahead is driving below the speed limit"], answer: "Your view is obstructed by a hill or curve, or at a railroad crossing or intersection", explanation: "Passing is illegal and unsafe when your view is blocked, such as on hills, curves, at intersections, railroad crossings, or when there are solid yellow lines in your lane." },
             { question: "A 'diamond-shaped' road sign typically indicates:", options: ["Regulatory information (e.g., speed limit)", "Warning or caution (e.g., curve ahead, school zone)", "Route marker or guidance", "Services or points of interest"], answer: "Warning or caution (e.g., curve ahead, school zone)", explanation: "Diamond-shaped signs are used to warn drivers of existing or possible hazards on or near the roadway, such as curves, intersections, or school zones." },
-            { question: "If you are involved in a minor motor vehicle accident in NJ with no injuries and property damage appears to be less than $500, you should:", options: ["Leave the scene immediately if your car is drivable", "Move your vehicle out of traffic if possible, then exchange insurance and license information", "Wait for the police before moving your vehicle", "Only call your insurance company"], answer: "Move your vehicle out of traffic if possible, then exchange insurance and license information", explanation: "For minor accidents without injuries and minimal damage, move vehicles to a safe location if possible, exchange driver and insurance information, and report to police if required by law or if there's any doubt." },
+            { question: "If you are involved in a minor motor vehicle accident in NJ with no injuries and property damage appears to be less than $500, you should:", options: ["Leave the scene immediately if your car is drivable", "Move your vehicle out of traffic if possible, then exchange insurance and license information", "Wait for the police before moving your vehicle", "Only call your insurance company"], answer: "Move your vehicle out of traffic if possible, then exchange insurance and license information", explanation: "For minor accidents without injuries and minimal damage, move vehicles to a safe location if possible, exchange driver and insurance information, and report to police if required by law or if there's any doubt. Note: The $500 threshold may vary; always consult current NJ MVC guidelines or report if unsure." },
             { question: "What is the 'Implied Consent Law' in New Jersey?", options: ["You agree to always drive safely", "You agree to a breath test if suspected of DUI", "You consent to vehicle searches", "You consent to higher insurance rates"], answer: "You agree to a breath test if suspected of DUI", explanation: "The Implied Consent Law means that by operating a motor vehicle in NJ, you automatically agree to submit to a breath test if arrested for suspicion of driving under the influence (DUI)." },
             { question: "When are road surfaces most slippery during rainfall?", options: ["After it has been raining for an hour", "During a heavy downpour", "During the first few minutes of rain", "When the rain stops"], answer: "During the first few minutes of rain", explanation: "Roads are most slippery during the first few minutes of rainfall as oil and grease on the road mix with water, creating a slick surface before being washed away." },
             { question: "If a school bus has stopped directly in front of a school to pick up or let off children, you may pass from either direction at a speed of no more than:", options: ["5 mph", "10 mph", "15 mph", "You may not pass"], answer: "10 mph", explanation: "When a school bus is stopped in front of a school to pick up or drop off children, you may pass from either direction at a speed of no more than 10 mph. Be extremely cautious." },
@@ -362,7 +369,7 @@
             { question: "If you approach an intersection and a large truck is stopped for the traffic light, you should:", options: ["Stop with enough distance so you will not be in a blind spot and you can see the driver in their mirror", "Quickly pass the truck on the right", "Stop very close to the truck's rear bumper", "Assume the truck driver can see you"], answer: "Stop with enough distance so you will not be in a blind spot and you can see the driver in their mirror", explanation: "Maintain a safe distance behind large trucks, ensuring you are not in their blind spots (no-zones). If you can't see the truck's mirrors, the driver likely can't see you." },
             { question: "The holder of a validated GDL permit (21 years of age or older) is restricted to what driving hours?", options: ["5:01 AM to 11:00 PM", "No restrictions apply", "6:01 AM to 12:00 Midnight", "5:01 AM to 9:00 PM"], answer: "No restrictions apply", explanation: "For GDL permit holders who are 21 years of age or older, there are no driving hour restrictions." },
             { question: "How much is the fine for violation of any of the restrictions of the GDL Permit or Probationary License?", options: ["$25", "$50", "$100", "$500"], answer: "$100", explanation: "Violation of any GDL restrictions (such as hour or passenger restrictions) carries a fine of $100 and possible suspension of driving privileges." },
-            { question: "Before practice driving can begin, in addition to a valid registration and insurance card, the GDL driver must also have:", options: ["A supervising driver in the front seat", "A validated permit from an MVC Driver Testing Center", "Red GDL decals on the license plates", "All of the above"], answer: "All of the above", explanation: "To begin practice driving, a GDL driver needs a validated permit, a supervising adult driver, valid registration, valid insurance, and the required GDL decals displayed on the vehicle." },
+            { question: "Before practice driving can begin, in addition to a valid registration and insurance card, the GDL driver must also have:", options: ["A supervising driver in the front seat", "A validated permit from an MVC Driver Testing Center", "Red GDL decals on the license plates", "All of the above"], answer: "All of the above", explanation: "To begin practice driving, a GDL driver needs a validated permit, a supervising adult driver (who meets NJ requirements), valid registration, valid insurance, and the required GDL decals displayed on the vehicle." },
             { question: "During the probationary two-year period after receiving a special learner or an examination permit, a motorist must enroll in a Probationary Driver Program when:", options: ["Convicted of 2 or more moving violations totaling 4 or more points", "They get their first speeding ticket", "They are involved in any accident", "They turn 18"], answer: "Convicted of 2 or more moving violations totaling 4 or more points", explanation: "A motorist on a probationary license must attend a Probationary Driver Program if convicted of two or more moving violations totaling four or more points during their two-year probationary period." },
             { question: "A triangular shaped sign is a:", options: ["Yield sign", "Stop sign", "Railroad crossing sign", "School zone sign"], answer: "Yield sign", explanation: "Yield signs are triangular (inverted triangle) and red/white. They require you to slow down and give the right-of-way." },
             { question: "You may not park within how many feet of a stop sign?", options: ["10 feet", "25 feet", "50 feet", "75 feet"], answer: "50 feet", explanation: "In New Jersey, it is illegal to park within 50 feet of a stop sign to ensure visibility for all drivers." },
@@ -370,20 +377,21 @@
             { question: "Any change of address within the state must be reported to the MVC within what time period?", options: ["One week", "Two weeks", "One month", "60 days"], answer: "One week", explanation: "If you move within New Jersey, you must report your change of address to the MVC within one week after moving." }
         ];
 
-        const MAX_QUESTIONS_PER_TEST = 50; 
-        let currentQuestionIndex = 0;
-        let score = 0;
-        let userAnswers = []; 
-        let shuffledQuestions = [];
-        let answerSelected = false; 
+        // --- Global Variables & Constants ---
+        const MAX_QUESTIONS_PER_TEST = 50; // Number of questions per test session
+        let currentQuestionIndex = 0;      // Tracks the current question number (0-indexed)
+        let score = 0;                     // User's current score
+        let userAnswers = [];              // Stores objects with question, user's answer, correct answer, and correctness
+        let shuffledQuestions = [];        // Array of questions randomly selected and shuffled for the current test
+        let answerSelected = false;        // Flag to prevent multiple answer selections for a single question
 
-        // --- DOM Elements ---
+        // --- DOM Element References ---
+        // Get references to various HTML elements to interact with them via JavaScript
         const quizContainer = document.getElementById('quiz-container');
         const questionEl = document.getElementById('question');
         const answersEl = document.getElementById('answers');
         const progressBar = document.getElementById('progress-bar');
         const progressTextEl = document.getElementById('progress-text');
-        
         const resultsContainer = document.getElementById('results-section-container');
         const scoreEl = document.getElementById('score');
         const passFailMessageEl = document.getElementById('pass-fail-message');
@@ -391,52 +399,80 @@
         const retryBtn = document.getElementById('retry-btn');
         const nextQuestionBtn = document.getElementById('next-question-btn');
         const feedbackArea = document.getElementById('feedback-area');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        // --- Quiz Logic ---
+        // --- Core Quiz Logic ---
+
+        /**
+         * Shuffles an array in place using the Fisher-Yates algorithm.
+         * @param {Array} array - The array to be shuffled.
+         * @returns {Array} The shuffled array.
+         */
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
+                [array[i], array[j]] = [array[j], array[i]]; // ES6 destructuring swap
             }
             return array;
         }
 
+        /**
+         * Initializes or resets the quiz.
+         * Shuffles questions, resets score and progress, and loads the first question.
+         */
         function initializeQuiz() {
-            let allQuestions = [...questions]; 
-            shuffleArray(allQuestions);
-            shuffledQuestions = allQuestions.slice(0, MAX_QUESTIONS_PER_TEST);
+            // Create a fresh copy of all questions and shuffle them
+            let allQuestionsCopy = [...questions]; 
+            shuffleArray(allQuestionsCopy);
+            // Select the number of questions defined by MAX_QUESTIONS_PER_TEST
+            shuffledQuestions = allQuestionsCopy.slice(0, MAX_QUESTIONS_PER_TEST);
             
+            // For each selected question, shuffle its answer options
             shuffledQuestions = shuffledQuestions.map(q => ({
                 ...q,
-                options: shuffleArray([...q.options])
+                options: shuffleArray([...q.options]) // Shuffle a copy of options
             }));
 
+            // Reset quiz state variables
             currentQuestionIndex = 0;
             score = 0;
             userAnswers = [];
             answerSelected = false;
-            feedbackArea.innerHTML = ''; // Clear HTML content
-            nextQuestionBtn.classList.add('hidden');
-            resultsContainer.classList.add('hidden');
-            quizContainer.classList.remove('hidden'); 
-            document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });
+
+            // Reset UI elements
+            feedbackArea.innerHTML = ''; // Clear any previous feedback
+            nextQuestionBtn.classList.add('hidden'); // Hide "Next Question" button
+            resultsContainer.classList.add('hidden'); // Hide results section
+            quizContainer.classList.remove('hidden'); // Show quiz section
+            
+            // Scroll to the top of the quiz section for better UX on retries
+            // document.getElementById('quiz-section').scrollIntoView({ behavior: 'smooth' });
+            // Or scroll to hero if preferred on initial load/retry
+             document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });
 
 
+            // Load the first question and update progress bar
             loadQuestion();
             updateProgressBar();
         }
 
+        /**
+         * Loads and displays the current question and its answer options.
+         * Handles the end of the quiz by showing results.
+         */
         function loadQuestion() {
-            answerSelected = false;
-            feedbackArea.innerHTML = ''; 
-            nextQuestionBtn.classList.add('hidden');
-            enableAnswerButtons();
+            answerSelected = false; // Reset flag for the new question
+            feedbackArea.innerHTML = ''; // Clear feedback from previous question
+            nextQuestionBtn.classList.add('hidden'); // Hide next button until an answer is selected
+            enableAnswerButtons(); // Ensure answer buttons are clickable
 
             if (currentQuestionIndex < shuffledQuestions.length) {
                 const currentQuestion = shuffledQuestions[currentQuestionIndex];
-                questionEl.textContent = currentQuestion.question;
-                answersEl.innerHTML = ""; 
+                questionEl.textContent = currentQuestion.question; // Display question text
+                answersEl.innerHTML = ""; // Clear previous answer options
 
+                // Create and append buttons for each answer option
                 currentQuestion.options.forEach(option => {
                     const button = document.createElement("button");
                     button.textContent = option;
@@ -444,57 +480,76 @@
                     button.onclick = () => selectAnswer(button, option, currentQuestion);
                     answersEl.appendChild(button);
                 });
-                updateProgressBar();
+                updateProgressBar(); // Update progress
             } else {
+                // All questions answered, show results
                 showResults();
             }
         }
         
+        /**
+         * Handles the user's selection of an answer.
+         * @param {HTMLButtonElement} buttonEl - The button element that was clicked.
+         * @param {string} selectedOption - The text of the selected answer.
+         * @param {object} question - The current question object.
+         */
         function selectAnswer(buttonEl, selectedOption, question) {
-            if (answerSelected) return; 
+            if (answerSelected) return; // Prevent changing answer after selection
             answerSelected = true;
 
             const isCorrect = selectedOption === question.answer;
+
+            // Store user's answer details for review
             userAnswers.push({
                 question: question.question,
                 selectedAnswer: selectedOption,
                 correctAnswer: question.answer,
                 isCorrect: isCorrect,
-                explanation: question.explanation // Store explanation
+                explanation: question.explanation 
             });
 
             let feedbackHTML = '';
             if (isCorrect) {
-                score++;
-                buttonEl.classList.add('correct');
+                score++; // Increment score for correct answer
+                buttonEl.classList.add('correct'); // Style button as correct
                 feedbackHTML = `<p class="text-green-400 font-semibold">Correct!</p>`;
+                if (question.explanation) { // Add explanation if available
+                     feedbackHTML += `<p class="feedback-explanation">${question.explanation}</p>`;
+                }
             } else {
-                buttonEl.classList.add('incorrect');
-                feedbackHTML = `<p class="text-red-400 font-semibold">Incorrect. The correct answer is: ${question.answer}</p>`;
-                if (question.explanation) {
+                buttonEl.classList.add('incorrect'); // Style button as incorrect
+                feedbackHTML = `<p class="text-red-400 font-semibold">Incorrect. The correct answer is: <strong class="text-green-300">${question.answer}</strong></p>`;
+                if (question.explanation) { // Add explanation if available
                     feedbackHTML += `<p class="feedback-explanation">${question.explanation}</p>`;
                 }
-                // Highlight the correct answer
+                // Highlight the correct answer button
                 Array.from(answersEl.children).forEach(btn => {
                     if (btn.textContent === question.answer) {
-                        btn.classList.add('correct');
+                        btn.classList.add('correct'); // Style the actual correct answer
                     }
                 });
             }
-            feedbackArea.innerHTML = feedbackHTML;
-            disableAnswerButtons();
-            nextQuestionBtn.classList.remove('hidden');
-            nextQuestionBtn.focus(); 
+            feedbackArea.innerHTML = feedbackHTML; // Display feedback message
+            disableAnswerButtons(); // Make answer buttons unclickable
+            nextQuestionBtn.classList.remove('hidden'); // Show "Next Question" button
+            nextQuestionBtn.focus(); // Set focus for keyboard navigation
         }
 
+        /**
+         * Disables all answer buttons after an answer has been selected.
+         */
         function disableAnswerButtons() {
             Array.from(answersEl.children).forEach(btn => {
                 btn.disabled = true;
                 btn.classList.add('opacity-70', 'cursor-not-allowed');
+                // Remove hover effects as they are no longer applicable
                 btn.classList.remove('hover:border-green-500', 'hover:bg-slate-700');
             });
         }
 
+        /**
+         * Enables all answer buttons when a new question is loaded.
+         */
         function enableAnswerButtons() {
              Array.from(answersEl.children).forEach(btn => {
                 btn.disabled = false;
@@ -503,98 +558,119 @@
             });
         }
 
-
+        // Event listener for the "Next Question" button
         nextQuestionBtn.addEventListener('click', () => {
-            currentQuestionIndex++;
-            loadQuestion();
+            currentQuestionIndex++; // Move to the next question
+            loadQuestion(); // Load and display it
         });
 
+        /**
+         * Updates the progress bar and text based on the current question index.
+         */
         function updateProgressBar() {
             const progressPercentage = (currentQuestionIndex / shuffledQuestions.length) * 100;
             progressBar.style.width = `${progressPercentage}%`;
             progressTextEl.textContent = `${currentQuestionIndex}/${shuffledQuestions.length}`;
         }
 
+        /**
+         * Displays the quiz results after all questions have been answered.
+         * Shows score, pass/fail message, and a review of answers.
+         */
         function showResults() {
-            quizContainer.classList.add('hidden'); 
-            resultsContainer.classList.remove('hidden'); 
-            resultsContainer.scrollIntoView({ behavior: 'smooth' });
-
+            quizContainer.classList.add('hidden'); // Hide quiz area
+            resultsContainer.classList.remove('hidden'); // Show results area
+            resultsContainer.scrollIntoView({ behavior: 'smooth' }); // Scroll to results
 
             const percentageScore = (score / shuffledQuestions.length) * 100;
             scoreEl.textContent = `You scored ${score} out of ${shuffledQuestions.length} (${percentageScore.toFixed(0)}%)`;
             
-            if (percentageScore >= 80) { // NJ MVC passing score is 80% (40 out of 50)
-                scoreEl.classList.add('text-green-400');
-                scoreEl.classList.remove('text-red-400', 'text-orange-400');
+            // Determine pass/fail message and styling
+            // NJ MVC passing score is 80% (40 out of 50 for a 50-question test)
+            if (percentageScore >= 80) { 
+                scoreEl.className = 'text-2xl text-center mb-6 text-green-400'; // Reset and apply green
                 passFailMessageEl.textContent = "Congratulations, You Passed!";
                 passFailMessageEl.className = "text-2xl font-bold text-green-400";
             } else {
-                scoreEl.classList.add('text-red-400');
-                scoreEl.classList.remove('text-green-400', 'text-orange-400');
+                scoreEl.className = 'text-2xl text-center mb-6 text-red-400'; // Reset and apply red
                 passFailMessageEl.textContent = "Keep Practicing, You Can Do It!";
                 passFailMessageEl.className = "text-2xl font-bold text-red-400";
-
             }
 
-            wrongListEl.innerHTML = ""; 
+            wrongListEl.innerHTML = ""; // Clear previous results list
+            // Populate the list of answers for review
             userAnswers.forEach(item => {
                 const li = document.createElement("li");
-                li.className = `p-4 rounded-md shadow ${item.isCorrect ? 'bg-green-900/30 border-green-500' : 'bg-red-900/30 border-red-500'}`;
+                li.className = `p-4 rounded-md shadow ${item.isCorrect ? 'bg-slate-700/50 border-green-500' : 'bg-slate-700/50 border-red-500'}`;
                 
                 let content = `<p class="font-semibold text-slate-100">${item.question}</p>
                                <p class="text-sm ${item.isCorrect ? 'text-green-300' : 'text-red-300'}">Your answer: ${item.selectedAnswer}</p>`;
                 if (!item.isCorrect) {
                     content += `<p class="text-sm text-green-300">Correct answer: ${item.correctAnswer}</p>`;
-                    if (item.explanation) {
-                         content += `<p class="text-xs text-slate-400 mt-1">${item.explanation}</p>`;
-                    }
+                }
+                // Always show explanation if available, regardless of correct/incorrect
+                if (item.explanation) {
+                     content += `<p class="feedback-explanation">${item.explanation}</p>`;
                 }
                 li.innerHTML = content;
                 wrongListEl.appendChild(li);
             });
         }
 
+        // Event listener for the "Retry Test" button
         retryBtn.addEventListener("click", initializeQuiz);
 
-        // --- Mobile Menu Toggle ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // --- UI Enhancements & Event Handlers ---
+
+        // Mobile Menu Toggle Functionality
         mobileMenuButton.addEventListener('click', () => {
-            const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
-            mobileMenuButton.setAttribute('aria-expanded', !expanded);
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
             mobileMenu.classList.toggle('hidden');
+            // Toggle visibility of hamburger/close icons
             mobileMenuButton.querySelectorAll('svg').forEach(icon => icon.classList.toggle('hidden'));
         });
 
+        // Close mobile menu when a navigation link is clicked
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenuButton.setAttribute('aria-expanded', 'false');
                 mobileMenu.classList.add('hidden');
                 const icons = mobileMenuButton.querySelectorAll('svg');
-                icons[0].classList.remove('hidden'); // Show hamburger
-                icons[1].classList.add('hidden');    // Hide close
+                icons[0].classList.remove('hidden'); // Show hamburger icon
+                icons[1].classList.add('hidden');    // Hide close icon
             });
         });
 
-
-        // --- FAQ Accordion ---
+        // FAQ Accordion Functionality
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
                 const faqItem = button.closest('.faq-item');
+                const isOpening = !faqItem.classList.contains('open');
+                
+                // Optional: Close other open FAQs for an accordion effect
+                // document.querySelectorAll('.faq-item.open').forEach(openItem => {
+                //     if (openItem !== faqItem) {
+                //         openItem.classList.remove('open');
+                //         openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                //     }
+                // });
+
                 faqItem.classList.toggle('open');
+                button.setAttribute('aria-expanded', isOpening);
             });
         });
         
-        // --- Smooth Scrolling for Nav Links ---
+        // Smooth Scrolling for Navigation Links
         document.querySelectorAll('nav a[href^="#"], a[href="#quiz-section"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    if (!mobileMenu.classList.contains('hidden')) { // Check if mobile menu is open
-                         mobileMenuButton.click(); 
+                    // If mobile menu is open, close it before scrolling
+                    if (!mobileMenu.classList.contains('hidden')) { 
+                        mobileMenuButton.click(); // Simulate click to toggle and close
                     }
                     targetElement.scrollIntoView({
                         behavior: 'smooth'
@@ -603,8 +679,11 @@
             });
         });
 
+        // Update copyright year dynamically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // --- Initialize Quiz on Load ---
+        // --- Initialize Quiz on Page Load ---
+        // Waits for the DOM to be fully loaded before starting the quiz
         document.addEventListener('DOMContentLoaded', initializeQuiz);
 
     </script>
