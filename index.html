@@ -3,128 +3,601 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Prepare for your New Jersey driving permit test with our comprehensive practice quiz and resources. Access manuals, test yourself, and book your knowledge test appointment easily.">
-    <meta name="keywords" content="New Jersey, driving permit test, knowledge test, driver manuals, traffic signs, defensive driving, practice test">
-    <meta name="author" content="Driver Test Site">
+    <meta name="description" content="Ace your New Jersey MVC Permit Test with DrivingTestNJ.com! Comprehensive, free practice tests with real NJ driving questions, detailed explanations, and the latest 2025 NJ Driver Manual references.">
+    <meta name="keywords" content="NJ permit test, New Jersey driving test, MVC practice test NJ, NJ knowledge test, drivingtestnj.com, New Jersey driver's license, NJ GDL test, free permit practice test NJ, NJ MVC exam, NJ driving manual">
+    <meta name="author" content="DrivingTestNJ.com">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="New Jersey Driving Permit Practice Test">
-    <meta property="og:description" content="Comprehensive practice tests and resources for New Jersey driving permits. Learn, test, and book your appointment now.">
-    <meta property="og:image" content="favicon.png">
-    <meta property="og:url" content="https://example.com">
+    <meta property="og:title" content="DrivingTestNJ - Ace Your NJ MVC Permit Exam!">
+    <meta property="og:description" content="The ultimate free resource for the New Jersey MVC permit test. Updated 2025 questions, detailed explanations, and everything you need to pass on your first try at DrivingTestNJ.com.">
+    <meta property="og:image" content="https://placehold.co/1200x630/10B981/FFFFFF?text=DrivingTestNJ.com">
+    <meta property="og:url" content="https://drivingtestnj.com/">
     <meta property="og:type" content="website">
-    <title>New Jersey Driving Permit Practice Test - Manuals & Resources</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.webp" type="image/png">
+    <title>DrivingTestNJ - Ace Your NJ MVC Permit Exam!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://placehold.co/32x32/10B981/FFFFFF?text=DTNJ" type="image/png">
+    <style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #10B981; /* Tailwind green-500 */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #059669; /* Tailwind green-600 */
+        }
+
+        /* Custom styles for FAQ accordion */
+        .faq-item .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 500px; /* Adjust as needed */
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .faq-item .faq-icon {
+            transition: transform 0.3s ease-out;
+        }
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Animation for elements appearing */
+        .fade-in-up {
+            animation: fadeInUp 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Add slight delay for staggered animations */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+
+
+        /* Custom focus rings for better accessibility */
+        .custom-focus-ring:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.5); /* Tailwind green-500 with opacity */
+        }
+        .answer-btn.selected {
+            background-color: #059669; /* Tailwind green-600 */
+            color: white;
+            border-color: #047857; /* Tailwind green-700 */
+        }
+        .answer-btn.correct {
+            background-color: #10B981 !important; /* Tailwind green-500 */
+            color: white !important;
+            border-color: #059669 !important; /* Tailwind green-600 */
+        }
+        .answer-btn.incorrect {
+            background-color: #EF4444 !important; /* Tailwind red-500 */
+            color: white !important;
+            border-color: #DC2626 !important; /* Tailwind red-600 */
+        }
+        #wrong-list li {
+            border-left-width: 4px;
+        }
+        .feedback-explanation {
+            font-size: 0.9rem;
+            color: #cbd5e1; /* slate-300 */
+            margin-top: 0.5rem;
+        }
+    </style>
 </head>
-<body>
-    <nav>
-        <div class="menu-container">
-            <div class="logo">Brand<span>Name</span></div>
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </button>
-            <ul class="menu">
-                <li><a href="#quiz">Take Test</a></li>
-                <li><a href="#manuals">Manuals</a></li>
-                <li><a href="#results">Results</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                
-                <li><a href="https://www.nj.gov/mvc/license/knowledgetest.htm" target="_blank">Book a Test</a></li>
-            </ul>
+<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-slate-100 font-sans antialiased">
+
+    <nav class="bg-slate-900/80 backdrop-blur-md shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="https://drivingtestnj.com/" class="flex-shrink-0 flex items-center text-2xl font-bold text-green-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-label="DrivingTestNJ Logo">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        DrivingTestNJ
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#quiz-section" class="text-slate-300 hover:bg-green-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium custom-focus-ring transition-colors duration-150">Take Test</a>
+                        <a href="#manuals-section" class="text-slate-300 hover:bg-green-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium custom-focus-ring transition-colors duration-150">Manuals</a>
+                        <a href="#results-section-container" class="text-slate-300 hover:bg-green-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium custom-focus-ring transition-colors duration-150">Results</a>
+                        <a href="#faq-section" class="text-slate-300 hover:bg-green-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium custom-focus-ring transition-colors duration-150">FAQ</a>
+                        <a href="https://www.nj.gov/mvc/license/knowledgetest.htm" target="_blank" class="bg-green-500 text-white hover:bg-green-600 px-4 py-2 rounded-md text-sm font-medium custom-focus-ring transition-colors duration-150 shadow-md hover:shadow-lg">Book MVC Test</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="bg-slate-800 inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#quiz-section" class="text-slate-300 hover:bg-green-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium custom-focus-ring transition-colors duration-150">Take Test</a>
+                <a href="#manuals-section" class="text-slate-300 hover:bg-green-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium custom-focus-ring transition-colors duration-150">Manuals</a>
+                <a href="#results-section-container" class="text-slate-300 hover:bg-green-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium custom-focus-ring transition-colors duration-150">Results</a>
+                <a href="#faq-section" class="text-slate-300 hover:bg-green-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium custom-focus-ring transition-colors duration-150">FAQ</a>
+                <a href="https://www.nj.gov/mvc/license/knowledgetest.htm" target="_blank" class="bg-green-500 text-white hover:bg-green-600 block px-3 py-2 rounded-md text-base font-medium custom-focus-ring transition-colors duration-150 shadow-md">Book MVC Test</a>
+            </div>
         </div>
     </nav>
 
-    <main>
-        <section id="quiz">
-            <div id="quiz-container">
-                <div id="progress-bar">
-                    <div id="progress"></div>
+    <main class="container mx-auto px-4 py-8 md:py-12">
+
+        <section id="hero" class="text-center py-12 md:py-20 fade-in-up">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6">
+                Ace Your <span class="text-green-400">New Jersey</span> Permit Test!
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
+                The ultimate free practice test for the NJ MVC knowledge exam. Updated for 2025 with real questions and detailed explanations to help you pass on your first try!
+            </p>
+            <a href="#quiz-section" class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 custom-focus-ring">
+                Start Free Practice Test Now!
+            </a>
+        </section>
+
+        <section id="quiz-section" class="py-12 scroll-mt-20">
+            <div id="quiz-container" class="bg-slate-800 shadow-2xl rounded-xl p-6 md:p-10 max-w-4xl mx-auto fade-in-up delay-100">
+                <div id="progress-bar-container" class="mb-6">
+                    <div class="flex justify-between text-sm text-slate-400 mb-1">
+                        <span>Progress</span>
+                        <span id="progress-text">0/50</span>
+                    </div>
+                    <div class="w-full bg-slate-700 rounded-full h-4">
+                        <div id="progress-bar" class="bg-green-500 h-4 rounded-full transition-all duration-300 ease-out" style="width: 0%;"></div>
+                    </div>
                 </div>
-                <div id="question">Loading question...</div>
-                <ul id="answers"></ul>
+                <div id="question-area" class="mb-6">
+                    <h2 id="question" class="text-2xl md:text-3xl font-semibold mb-6 text-center min-h-[72px] flex items-center justify-center">Loading question...</h2>
+                    <div id="answers" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        </div>
+                </div>
+                <div id="feedback-area" class="mt-4 text-center min-h-[48px]"> </div>
+                <div class="mt-8 text-center">
+                    <button id="next-question-btn" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-150 custom-focus-ring hidden">Next Question</button>
+                </div>
             </div>
-            <div id="results" style="display: none;">
-                <h2>Your Results</h2>
-                <p id="score">Your score will appear here</p>
-                <div id="wrong-answers">
-                    <h3>Questions You Got Wrong:</h3>
-                    <ul id="wrong-list"></ul>
+
+            <div id="results-section-container" class="bg-slate-800 shadow-2xl rounded-xl p-6 md:p-10 max-w-4xl mx-auto mt-12 hidden scroll-mt-20 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-green-400">Test Results</h2>
+                <p id="score" class="text-2xl text-center mb-6"></p>
+                <div id="score-visual" class="mb-8 text-center">
+                     <p id="pass-fail-message" class="text-2xl font-bold"></p>
                 </div>
-                <button id="retry-btn">Retake Test</button>
+                <div id="wrong-answers" class="mb-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-center">Review Your Answers:</h3>
+                    <ul id="wrong-list" class="space-y-4">
+                        </ul>
+                </div>
+                <div class="text-center">
+                    <button id="retry-btn" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-150 custom-focus-ring">
+                        Retake Test
+                    </button>
+                </div>
             </div>
         </section>
 
-        <aside id="manuals">
-            <h2>Driving Manuals</h2>
-            <div class="manual">
-                <h3>New Jersey Driver's Manual</h3>
-                <p>Learn all about road rules and regulations in New Jersey.</p>
-                <a href="NJ_drivermanual.pdf" class="download-btn" download>Download</a>
-            </div>
-            <div class="manual">
-                <h3>Traffic Signs Manual</h3>
-                <p>Understand common traffic signs and their meanings.</p>
-                <a href="Traffic_Signs_Manual.pdf" class="download-btn" download>Download</a>
-            </div>
-
-            <div class="manual">
-                <h3>Defensive Driving Techniques</h3>
-                <p>Learn how to drive safely and avoid accidents.</p>
-                <a href="Defensive_Driving_Techniques.pdf" class="download-btn" download>Download</a>
-            </div>
-        </aside>
-
-        <section id="faq">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h3>What is the passing score for the NJ driving test?</h3>
-                <p>You need to answer at least 80% of the questions correctly to pass the test.</p>
-            </div>
-            <div class="faq-item">
-                <h3>How do I book my NJ knowledge test?</h3>
-                <p>You can book your test online through the official <a href="https://www.nj.gov/mvc/license/knowledgetest.htm" target="_blank">MVC knowledge test page</a>.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What documents do I need for the knowledge test?</h3>
-                <p>You will need your 6 Points of ID, proof of address, and your social security number.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What happens if I fail the test?</h3>
-                <p>If you fail, you must wait at least 7 days before you can retake the test.</p>
+        <section id="manuals-section" class="py-12 scroll-mt-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-green-400 fade-in-up">Essential NJ Driving Resources</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-800 shadow-xl rounded-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition-shadow duration-300 fade-in-up delay-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v11.494m0 0a8.485 8.485 0 0011.92 0M12 17.747a8.485 8.485 0 01-11.92 0M12 6.253a8.485 8.485 0 0111.92 0M12 6.253L12 3M5.045 8.487A8.482 8.482 0 0112 5.192m7.022 3.295A8.479 8.479 0 0112 11.808m-7.022-3.295A8.479 8.479 0 0012 11.808" />
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2">New Jersey Driver's Manual</h3>
+                    <p class="text-slate-400 mb-4 text-sm">The official 2025 NJ MVC guide covering all rules and regulations.</p>
+                    <a href="https://www.nj.gov/mvc/pdf/manuals/drivermanual.pdf" target="_blank" rel="noopener noreferrer" class="mt-auto bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-150 custom-focus-ring">Download PDF</a>
+                </div>
+                <div class="bg-slate-800 shadow-xl rounded-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition-shadow duration-300 fade-in-up delay-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2">Traffic Signs & Signals</h3>
+                    <p class="text-slate-400 mb-4 text-sm">Official NJ guide to understanding traffic control devices.</p>
+                    <a href="https://www.state.nj.us/mvc/pdf/manuals/Driver%20Manual%20-%20Chapter%204%20-%20Traffic%20Control.pdf" target="_blank" rel="noopener noreferrer" class="mt-auto bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-150 custom-focus-ring">View Signs PDF</a>
+                </div>
+                <div class="bg-slate-800 shadow-xl rounded-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition-shadow duration-300 fade-in-up delay-300">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2">GDL Information</h3>
+                    <p class="text-slate-400 mb-4 text-sm">Learn about NJ's Graduated Driver License program requirements.</p>
+                    <a href="https://www.nj.gov/mvc/license/gdl.htm" target="_blank" rel="noopener noreferrer" class="mt-auto bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-150 custom-focus-ring">NJ GDL Info</a>
+                </div>
             </div>
         </section>
 
+        <section id="faq-section" class="py-12 scroll-mt-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-green-400 fade-in-up">Permit Test FAQs</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="faq-item bg-slate-800 shadow-lg rounded-lg overflow-hidden fade-in-up delay-100">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-5 md:p-6 custom-focus-ring">
+                        <span class="text-lg font-semibold">What is the passing score for the NJ permit test?</span>
+                        <svg class="faq-icon h-6 w-6 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer px-5 md:px-6 text-slate-300">
+                        <p>To pass the NJ MVC knowledge test, you must answer at least 40 out of 50 questions correctly. This is an 80% score. Our practice tests help you aim higher!</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-slate-800 shadow-lg rounded-lg overflow-hidden fade-in-up delay-200">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-5 md:p-6 custom-focus-ring">
+                        <span class="text-lg font-semibold">How many questions are on the NJ permit test?</span>
+                         <svg class="faq-icon h-6 w-6 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer px-5 md:px-6 text-slate-300">
+                        <p>The official NJ MVC knowledge test consists of 50 multiple-choice questions. Our practice tests are designed to simulate this experience with 50 questions per test.</p>
+                    </div>
+                </div>
+                 <div class="faq-item bg-slate-800 shadow-lg rounded-lg overflow-hidden fade-in-up delay-300">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-5 md:p-6 custom-focus-ring">
+                        <span class="text-lg font-semibold">What documents do I need for the NJ MVC knowledge test?</span>
+                         <svg class="faq-icon h-6 w-6 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer px-5 md:px-6 text-slate-300">
+                        <p>You'll need to satisfy the 6 Points of ID verification, provide proof of address, and your social security number. Always check the official <a href="https://www.nj.gov/mvc/license/6pointid.htm" target="_blank" rel="noopener noreferrer" class="text-green-400 hover:underline">NJ MVC website</a> for the most current requirements before your appointment.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-slate-800 shadow-lg rounded-lg overflow-hidden fade-in-up delay-400">
+                    <button class="faq-question w-full flex justify-between items-center text-left p-5 md:p-6 custom-focus-ring">
+                        <span class="text-lg font-semibold">What happens if I fail the NJ permit test?</span>
+                         <svg class="faq-icon h-6 w-6 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer px-5 md:px-6 text-slate-300">
+                        <p>If you don't pass the knowledge test, you must wait at least 7 days before you can retake it. Use DrivingTestNJ.com to study the questions you missed and improve your score for the next attempt!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 New Jersey Permit Test Practice. All Rights Reserved.</p>
+    <footer class="bg-slate-900 border-t border-slate-700">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-slate-400 text-sm">&copy; 2025 DrivingTestNJ.com. All Rights Reserved. Your partner for NJ driving success.</p>
+            <p class="text-slate-500 text-xs mt-1">This site, DrivingTestNJ.com, is for practice purposes only and is not affiliated with or endorsed by the New Jersey Motor Vehicle Commission (NJ MVC) or any government agency.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
     <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const menu = document.querySelector('.menu');
+        // --- Questions Data ---
+        const questions = [
+            // Questions 1-40 from previous version, with explanations added
+            { question: "What does a solid red traffic light signify?", options: ["Stop", "Yield", "Go if clear", "Slow down"], answer: "Stop", explanation: "A solid red light means you must come to a complete stop before the intersection or crosswalk and remain stopped until the light turns green and it's safe to proceed." },
+            { question: "Upon approaching a stop sign, what is the correct action?", options: ["Slow significantly", "Come to a complete stop", "Honk and proceed", "Yield if traffic present"], answer: "Come to a complete stop", explanation: "A stop sign requires you to bring your vehicle to a complete halt before the marked stop line or crosswalk, or before entering the intersection if no lines are present." },
+            { question: "What does a yellow traffic light indicate?", options: ["Stop immediately", "Prepare to stop, light will turn red", "Speed up to clear intersection", "Proceed with caution"], answer: "Prepare to stop, light will turn red", explanation: "A solid yellow light warns that the light is about to turn red. You should slow down and prepare to stop. Do not speed up to try to beat the light." },
+            { question: "In New Jersey, what is the typical speed limit in a residential or business district unless otherwise posted?", options: ["25 mph", "35 mph", "30 mph", "40 mph"], answer: "25 mph", explanation: "Unless a different speed limit is posted, the NJ speed limit in business or residential districts is 25 mph. Always observe posted speed limits." },
+            { question: "If an emergency vehicle with flashing lights and siren is approaching, what should you do?", options: ["Maintain speed and direction", "Speed up", "Pull over to the extreme right and stop", "Stop immediately in your lane"], answer: "Pull over to the extreme right and stop", explanation: "You must yield the right-of-way to emergency vehicles. Safely pull over to the extreme right side of the road and stop until the emergency vehicle has passed." },
+            { question: "What does a triangular 'YIELD' sign mean?", options: ["Stop completely", "Give the right-of-way to other traffic", "Maintain speed", "Road closed ahead"], answer: "Give the right-of-way to other traffic", explanation: "A yield sign means you must slow down and be prepared to stop, if necessary, to let other vehicles, pedestrians, or bicycles pass before you proceed." },
+            { question: "When should high-beam headlights be used?", options: ["In foggy conditions", "On open country roads at night with no other cars nearby", "During daytime rain", "In heavy city traffic"], answer: "On open country roads at night with no other cars nearby", explanation: "High beams should be used on open roads when there are no oncoming vehicles or vehicles ahead of you. Dim them when approaching other vehicles to avoid blinding other drivers." },
+            { question: "A flashing yellow traffic light means you should:", options: ["Stop and wait for green", "Slow down and proceed with caution", "Speed up", "Yield to all traffic"], answer: "Slow down and proceed with caution", explanation: "A flashing yellow light means slow down, check for cross traffic, and proceed through the intersection with caution." },
+            { question: "Driving under the influence (DUI) of alcohol or drugs in New Jersey can result in:", options: ["A warning for first offense", "Fines only", "License suspension, fines, and possible jail time", "Community service only"], answer: "License suspension, fines, and possible jail time", explanation: "NJ has strict DUI laws. Penalties can include hefty fines, license suspension, ignition interlock device requirements, community service, and even jail time, depending on the offense." },
+            { question: "When approaching a pedestrian in a crosswalk, drivers must:", options: ["Honk to alert them", "Yield and be prepared to stop", "Proceed if the pedestrian is on the other side", "Slow down slightly"], answer: "Yield and be prepared to stop", explanation: "Drivers must always yield to pedestrians in a crosswalk. Be prepared to stop to allow them to cross safely. Failure to yield can result in fines and points." },
+            { question: "How far must you park from a fire hydrant in New Jersey?", options: ["10 feet", "15 feet", "20 feet", "5 feet"], answer: "10 feet", explanation: "In New Jersey, you are not allowed to park within 10 feet of a fire hydrant." },
+            { question: "The correct hand signal for a right turn is:", options: ["Hand and arm extended straight out (left turn)", "Hand and arm pointed upward", "Hand and arm pointed downward (stop/slow)", "Waving hand in a circular motion"], answer: "Hand and arm pointed upward", explanation: "For a right turn, extend your left hand and arm upward out the driver's side window. Straight out is for a left turn, and downward is for stopping or slowing." },
+            { question: "For drivers 21 years or older in NJ, it is illegal to drive with a Blood Alcohol Concentration (BAC) of:", options: ["0.08% or higher", "0.05% or higher", "0.10% or higher", "0.02% or higher"], answer: "0.08% or higher", explanation: "In NJ, for drivers 21 and older, a BAC of 0.08% or higher is considered driving under the influence. For drivers under 21, any detectable BAC (0.01% or higher) is illegal." },
+            { question: "When driving in fog, you should use:", options: ["High-beam headlights", "Low-beam headlights", "Parking lights only", "Hazard lights continuously"], answer: "Low-beam headlights", explanation: "Low-beam headlights are best in fog because high beams will reflect off the fog and reduce visibility even more. If visibility is severely limited, pull over safely and wait." },
+            { question: "A double solid yellow line in the center of a two-way road means:", options: ["Passing is permitted from either direction", "No passing allowed from either direction", "Passing allowed only if your side is broken", "Road is ending"], answer: "No passing allowed from either direction", explanation: "Double solid yellow lines indicate that passing is prohibited for vehicles traveling in both directions. Do not cross these lines to overtake another vehicle." },
+            { question: "At an uncontrolled intersection (no signs or signals), who generally has the right-of-way?", options: ["The vehicle on the left", "The vehicle that arrives first, or the vehicle on the right if arriving simultaneously", "The larger vehicle", "The faster vehicle"], answer: "The vehicle that arrives first, or the vehicle on the right if arriving simultaneously", explanation: "At an uncontrolled intersection, the first vehicle to arrive has the right-of-way. If two vehicles arrive at the same time, the vehicle on the right has the right-of-way." },
+            { question: "If your vehicle begins to hydroplane, you should:", options: ["Slam on the brakes", "Turn the steering wheel sharply", "Ease off the accelerator, do not brake", "Accelerate to regain traction"], answer: "Ease off the accelerator, do not brake", explanation: "If you hydroplane, take your foot off the gas pedal and steer in the direction you want to go. Avoid sudden braking or turning, as this can cause you to lose control." },
+            { question: "What is the recommended minimum following distance under ideal conditions (the 'three-second plus' rule)?", options: ["1 second", "2 seconds", "3 seconds or more", "5 seconds"], answer: "3 seconds or more", explanation: "The 'three-second plus' rule helps you maintain a safe following distance. Choose a fixed object ahead, and when the vehicle in front passes it, count 'one-thousand-one, one-thousand-two, one-thousand-three.' If you pass the object before finishing, you're too close. Increase distance in poor conditions." },
+            { question: "If your brakes suddenly fail, you should first:", options: ["Shift to neutral", "Pump the brake pedal fast and hard, and/or shift to a lower gear and use parking brake", "Turn off the ignition", "Honk and wave to warn others"], answer: "Pump the brake pedal fast and hard, and/or shift to a lower gear and use parking brake", explanation: "If brakes fail, pump the pedal quickly to build pressure. If that doesn't work, shift to a lower gear and apply the parking/emergency brake. Look for a safe place to pull over." },
+            { question: "When parallel parking in NJ, your vehicle's wheels must be within how many inches of the curb?", options: ["6 inches", "12 inches", "18 inches", "3 inches"], answer: "6 inches", explanation: "When properly parallel parked, your vehicle's wheels should be no more than 6 inches from the curb in New Jersey." },
+            { question: "A green traffic light means:", options: ["Stop and check for traffic", "Proceed when safe", "Go immediately", "Yield to oncoming traffic"], answer: "Proceed when safe", explanation: "A green light means you may proceed, but only if the intersection is clear. Always yield to pedestrians and vehicles already in the intersection." },
+            { question: "A flashing red traffic light at an intersection means:", options: ["The same as a stop sign: stop, yield, then proceed when safe", "Slow down and proceed with caution", "Yield to all traffic before proceeding", "Intersection closed"], answer: "The same as a stop sign: stop, yield, then proceed when safe", explanation: "A flashing red light is treated the same as a stop sign. You must come to a complete stop, yield to traffic and pedestrians, and then proceed when it is safe to do so." },
+            { question: "In New Jersey, you may not park within how many feet of a crosswalk at an intersection?", options: ["10 feet", "15 feet", "25 feet", "50 feet"], answer: "25 feet", explanation: "It is illegal to park within 25 feet of a crosswalk at an intersection in New Jersey." },
+            { question: "The speed limit in a school zone in New Jersey, unless otherwise posted, when children are present or during recess is:", options: ["15 mph", "20 mph", "25 mph", "30 mph"], answer: "25 mph", explanation: "The speed limit in a school zone is 25 mph when children are present, during school arrival/dismissal, or recess, unless a different speed is posted. Always be extra cautious." },
+            { question: "When merging onto a highway, you should:", options: ["Stop at the end of the ramp and wait for a gap", "Speed up to match the flow of traffic and merge when safe", "Slow down and force your way in", "Expect highway traffic to yield to you"], answer: "Speed up to match the flow of traffic and merge when safe", explanation: "Use the acceleration lane to build up speed to match highway traffic. Signal your intent and merge smoothly and safely when there is an adequate gap. Highway traffic is not required to yield to merging vehicles." },
+            { question: "Headlights must be used:", options: ["Only after sunset and before sunrise", "Between one-half hour after sunset and one-half hour before sunrise, and when visibility is 500 feet or less, or when using windshield wipers", "Only during rain or fog", "At the driver's discretion"], answer: "Between one-half hour after sunset and one-half hour before sunrise, and when visibility is 500 feet or less, or when using windshield wipers", explanation: "NJ law requires headlights to be on from 30 minutes after sunset to 30 minutes before sunrise, when visibility is less than 500 feet, and whenever windshield wipers are in use due to weather conditions." },
+            { question: "In NJ, who is required by the GDL law to wear a seat belt in the vehicle?", options: ["Only the driver", "Only front-seat passengers", "The driver and all passengers", "Only passengers under 18"], answer: "The driver and all passengers", explanation: "Under NJ's Graduated Driver License (GDL) program, the driver and ALL passengers (front and back seats) are required to wear seat belts." },
+            { question: "It is illegal to pass another vehicle when:", options: ["You are on a multi-lane highway", "The vehicle ahead is turning left", "Your view is obstructed by a hill or curve, or at a railroad crossing or intersection", "The vehicle ahead is driving below the speed limit"], answer: "Your view is obstructed by a hill or curve, or at a railroad crossing or intersection", explanation: "Passing is illegal and unsafe when your view is blocked, such as on hills, curves, at intersections, railroad crossings, or when there are solid yellow lines in your lane." },
+            { question: "A 'diamond-shaped' road sign typically indicates:", options: ["Regulatory information (e.g., speed limit)", "Warning or caution (e.g., curve ahead, school zone)", "Route marker or guidance", "Services or points of interest"], answer: "Warning or caution (e.g., curve ahead, school zone)", explanation: "Diamond-shaped signs are used to warn drivers of existing or possible hazards on or near the roadway, such as curves, intersections, or school zones." },
+            { question: "If you are involved in a minor motor vehicle accident in NJ with no injuries and property damage appears to be less than $500, you should:", options: ["Leave the scene immediately if your car is drivable", "Move your vehicle out of traffic if possible, then exchange insurance and license information", "Wait for the police before moving your vehicle", "Only call your insurance company"], answer: "Move your vehicle out of traffic if possible, then exchange insurance and license information", explanation: "For minor accidents without injuries and minimal damage, move vehicles to a safe location if possible, exchange driver and insurance information, and report to police if required by law or if there's any doubt." },
+            { question: "What is the 'Implied Consent Law' in New Jersey?", options: ["You agree to always drive safely", "You agree to a breath test if suspected of DUI", "You consent to vehicle searches", "You consent to higher insurance rates"], answer: "You agree to a breath test if suspected of DUI", explanation: "The Implied Consent Law means that by operating a motor vehicle in NJ, you automatically agree to submit to a breath test if arrested for suspicion of driving under the influence (DUI)." },
+            { question: "When are road surfaces most slippery during rainfall?", options: ["After it has been raining for an hour", "During a heavy downpour", "During the first few minutes of rain", "When the rain stops"], answer: "During the first few minutes of rain", explanation: "Roads are most slippery during the first few minutes of rainfall as oil and grease on the road mix with water, creating a slick surface before being washed away." },
+            { question: "If a school bus has stopped directly in front of a school to pick up or let off children, you may pass from either direction at a speed of no more than:", options: ["5 mph", "10 mph", "15 mph", "You may not pass"], answer: "10 mph", explanation: "When a school bus is stopped in front of a school to pick up or drop off children, you may pass from either direction at a speed of no more than 10 mph. Be extremely cautious." },
+            { question: "In NJ, studded snow tires can be legally used between:", options: ["October 1st and April 30th", "November 15th and April 1st", "December 1st and March 15th", "Anytime during winter months"], answer: "November 15th and April 1st", explanation: "New Jersey law permits the use of studded snow tires between November 15th and April 1st to help with traction on icy or snowy roads." },
+            { question: "What color and shape is a railroad crossing advance warning sign?", options: ["Yellow and round", "White and X-shaped (crossbuck)", "Red and octagonal (stop sign)", "Green and rectangular (guide sign)"], answer: "Yellow and round", explanation: "The advance warning sign for a railroad crossing is a yellow circular sign with a black 'X' and 'RR'. The crossbuck sign at the crossing itself is X-shaped and white." },
+            { question: "An orange diamond-shaped sign means:", options: ["Rest area ahead", "Construction or road work zone", "School zone", "No passing zone"], answer: "Construction or road work zone", explanation: "Orange diamond-shaped signs are used to indicate temporary work zones, construction areas, or maintenance on or near the roadway. Proceed with caution and obey posted speed limits." },
+            { question: "If you miss your exit on an expressway, you should:", options: ["Back up on the shoulder", "Make a U-turn at the next median break", "Proceed to the next exit", "Stop and ask for directions"], answer: "Proceed to the next exit", explanation: "If you miss your exit, never back up or make a U-turn on an expressway. Continue to the next available exit and find a safe way to return to your route." },
+            { question: "When parking uphill on a street with a curb, your vehicle's front wheels should be:", options: ["Turned straight ahead", "Turned towards the curb", "Turned away from the curb", "It doesn't matter"], answer: "Turned away from the curb", explanation: "When parking uphill with a curb, turn your front wheels away from the curb (to the left). If your car rolls, it will roll into the curb. Remember: Up, Up, and Away!" },
+            { question: "A GDL (Graduated Driver License) permit holder under 21 must display what on their license plates?", options: ["A green decal", "Two reflective red decals", "A blue decal", "No decals required"], answer: "Two reflective red decals", explanation: "All GDL drivers under age 21, who possess a permit or probationary license, are required to display two visible, reflective red decals on the top left corner of both the front and rear license plates." },
+            { question: "What is the penalty for altering a driver's license or showing an altered driver's license in NJ?", options: ["A fine of up to $200", "A fine up to $1,000, up to 6 months imprisonment, and loss of driving privilege", "Community service", "A warning"], answer: "A fine up to $1,000, up to 6 months imprisonment, and loss of driving privilege", explanation: "Altering a driver's license or presenting an altered license is a serious offense in NJ, carrying penalties including a fine of up to $1,000, possible imprisonment for up to 6 months, and loss of driving privileges." },
+            
+            // New Questions (41-60)
+            { question: "When parking downhill on a street with a curb, your vehicle's front wheels should be:", options: ["Turned straight ahead", "Turned towards the curb", "Turned away from the curb", "Parallel to the curb"], answer: "Turned towards the curb", explanation: "When parking downhill with a curb, turn your front wheels towards the curb (to the right). If your car rolls, it will roll into the curb. Remember: Down, Down, and Towards!" },
+            { question: "What is the 'Move Over Law' in New Jersey?", options: ["Move to the left lane when someone wants to pass", "Drivers must move over a lane, if safe, or slow down for stopped emergency vehicles", "Large trucks must stay in the right lane", "Yield to vehicles already on the highway"], answer: "Drivers must move over a lane, if safe, or slow down for stopped emergency vehicles", explanation: "NJ's Move Over Law requires drivers to change lanes (if safe) or slow down significantly below the posted speed limit when approaching stationary emergency vehicles, tow trucks, or highway maintenance vehicles with flashing lights." },
+            { question: "How much braking distance will it take a vehicle to stop on a dry surface, when driving at a speed of 60 mph?", options: ["About 100 feet", "About 200 feet", "About 300 feet or more", "About 50 feet"], answer: "About 300 feet or more", explanation: "At 60 mph, total stopping distance (perception, reaction, and braking) can be 300 feet or more. This distance increases significantly in adverse conditions." },
+            { question: "Under NJ law, motorists signaling a right turn must yield to which of the following:", options: ["Only oncoming traffic", "Only pedestrians", "Inline skaters, skateboarders, bicyclists, and pedestrians", "Only other vehicles"], answer: "Inline skaters, skateboarders, bicyclists, and pedestrians", explanation: "When making a right turn, motorists must yield to all pedestrians, bicyclists, skateboarders, and inline skaters who are in the crosswalk or intersection." },
+            { question: "If a motorist's BAC is slightly above .05%, the risk of causing a motor vehicle accident is:", options: ["No different", "Doubled", "Tripled", "Six times as great"], answer: "Doubled", explanation: "Even a small amount of alcohol impairs driving. With a BAC of .05%, the risk of causing an accident doubles. At .10%, the risk is six times as great." },
+            { question: "In New Jersey, you must be at least how old to register a motor vehicle?", options: ["16 years old", "17 years old", "18 years old", "21 years old"], answer: "17 years old", explanation: "You must be at least 17 years old to register a vehicle in New Jersey." },
+            { question: "If you sell your car and do not buy another, what should you do with the license plates?", options: ["Keep them for your next car", "Turn them into any NJ MVC agency or mail them to the MVC", "Give them to the person who bought your car", "Destroy them"], answer: "Turn them into any NJ MVC agency or mail them to the MVC", explanation: "If you sell your vehicle and do not transfer the plates to another vehicle, you must surrender the old plates to the NJ MVC." },
+            { question: "Driving privileges will be postponed or suspended to any unlicensed person (13 to 21 years of age) convicted of:", options: ["Speeding", "Buying alcoholic beverages and/or driving under the influence (DUI)", "Not wearing a seatbelt", "Littering from a vehicle"], answer: "Buying alcoholic beverages and/or driving under the influence (DUI)", explanation: "NJ has zero tolerance for underage drinking and driving. Convictions for buying alcohol, DUI, graffiti, or setting false alarms can lead to suspension or postponement of driving privileges." },
+            { question: "When a traffic signal is hung vertically, the red light is typically:", options: ["On the bottom", "In the middle", "On the top", "On the left"], answer: "On the top", explanation: "For vertically hung traffic signals, the red light is always on top, yellow is in the middle, and green is on the bottom." },
+            { question: "An GDL examination permit or probationary license holder (under 21) may not drive between the hours of:", options: ["10:00 PM and 6:00 AM", "11:01 PM and 5:00 AM", "12:01 AM and 5:00 AM", "9:00 PM and 7:00 AM"], answer: "11:01 PM and 5:00 AM", explanation: "Holders of a Special Learner Permit, Examination Permit (under 21), or Probationary License (under 21) are prohibited from driving between 11:01 PM and 5:00 AM." },
+            { question: "What is the meaning of a hand signal when a driver's hand and arm are straight out?", options: ["Right turn", "Left turn", "Stop or slow down", "U-turn"], answer: "Left turn", explanation: "Extending the hand and arm straight out horizontally indicates an intention to make a left turn." },
+            { question: "If you approach an intersection and a large truck is stopped for the traffic light, you should:", options: ["Stop with enough distance so you will not be in a blind spot and you can see the driver in their mirror", "Quickly pass the truck on the right", "Stop very close to the truck's rear bumper", "Assume the truck driver can see you"], answer: "Stop with enough distance so you will not be in a blind spot and you can see the driver in their mirror", explanation: "Maintain a safe distance behind large trucks, ensuring you are not in their blind spots (no-zones). If you can't see the truck's mirrors, the driver likely can't see you." },
+            { question: "The holder of a validated GDL permit (21 years of age or older) is restricted to what driving hours?", options: ["5:01 AM to 11:00 PM", "No restrictions apply", "6:01 AM to 12:00 Midnight", "5:01 AM to 9:00 PM"], answer: "No restrictions apply", explanation: "For GDL permit holders who are 21 years of age or older, there are no driving hour restrictions." },
+            { question: "How much is the fine for violation of any of the restrictions of the GDL Permit or Probationary License?", options: ["$25", "$50", "$100", "$500"], answer: "$100", explanation: "Violation of any GDL restrictions (such as hour or passenger restrictions) carries a fine of $100 and possible suspension of driving privileges." },
+            { question: "Before practice driving can begin, in addition to a valid registration and insurance card, the GDL driver must also have:", options: ["A supervising driver in the front seat", "A validated permit from an MVC Driver Testing Center", "Red GDL decals on the license plates", "All of the above"], answer: "All of the above", explanation: "To begin practice driving, a GDL driver needs a validated permit, a supervising adult driver, valid registration, valid insurance, and the required GDL decals displayed on the vehicle." },
+            { question: "During the probationary two-year period after receiving a special learner or an examination permit, a motorist must enroll in a Probationary Driver Program when:", options: ["Convicted of 2 or more moving violations totaling 4 or more points", "They get their first speeding ticket", "They are involved in any accident", "They turn 18"], answer: "Convicted of 2 or more moving violations totaling 4 or more points", explanation: "A motorist on a probationary license must attend a Probationary Driver Program if convicted of two or more moving violations totaling four or more points during their two-year probationary period." },
+            { question: "A triangular shaped sign is a:", options: ["Yield sign", "Stop sign", "Railroad crossing sign", "School zone sign"], answer: "Yield sign", explanation: "Yield signs are triangular (inverted triangle) and red/white. They require you to slow down and give the right-of-way." },
+            { question: "You may not park within how many feet of a stop sign?", options: ["10 feet", "25 feet", "50 feet", "75 feet"], answer: "50 feet", explanation: "In New Jersey, it is illegal to park within 50 feet of a stop sign to ensure visibility for all drivers." },
+            { question: "Getting a driver license illegally may result in:", options: ["A warning", "A fine of $25 to $100", "A fine of $250 to $500 and/or imprisonment of 30-90 days", "License suspension for 30 days"], answer: "A fine of $250 to $500 and/or imprisonment of 30-90 days", explanation: "Obtaining a driver license illegally in NJ can lead to a fine of $250 to $500, imprisonment for 30 to 90 days, and a loss of driving privileges." },
+            { question: "Any change of address within the state must be reported to the MVC within what time period?", options: ["One week", "Two weeks", "One month", "60 days"], answer: "One week", explanation: "If you move within New Jersey, you must report your change of address to the MVC within one week after moving." }
+        ];
 
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('active');
-            menuToggle.classList.toggle('open');
+        const MAX_QUESTIONS_PER_TEST = 50; 
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let userAnswers = []; 
+        let shuffledQuestions = [];
+        let answerSelected = false; 
+
+        // --- DOM Elements ---
+        const quizContainer = document.getElementById('quiz-container');
+        const questionEl = document.getElementById('question');
+        const answersEl = document.getElementById('answers');
+        const progressBar = document.getElementById('progress-bar');
+        const progressTextEl = document.getElementById('progress-text');
+        
+        const resultsContainer = document.getElementById('results-section-container');
+        const scoreEl = document.getElementById('score');
+        const passFailMessageEl = document.getElementById('pass-fail-message');
+        const wrongListEl = document.getElementById('wrong-list');
+        const retryBtn = document.getElementById('retry-btn');
+        const nextQuestionBtn = document.getElementById('next-question-btn');
+        const feedbackArea = document.getElementById('feedback-area');
+
+        // --- Quiz Logic ---
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function initializeQuiz() {
+            let allQuestions = [...questions]; 
+            shuffleArray(allQuestions);
+            shuffledQuestions = allQuestions.slice(0, MAX_QUESTIONS_PER_TEST);
+            
+            shuffledQuestions = shuffledQuestions.map(q => ({
+                ...q,
+                options: shuffleArray([...q.options])
+            }));
+
+            currentQuestionIndex = 0;
+            score = 0;
+            userAnswers = [];
+            answerSelected = false;
+            feedbackArea.innerHTML = ''; // Clear HTML content
+            nextQuestionBtn.classList.add('hidden');
+            resultsContainer.classList.add('hidden');
+            quizContainer.classList.remove('hidden'); 
+            document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });
+
+
+            loadQuestion();
+            updateProgressBar();
+        }
+
+        function loadQuestion() {
+            answerSelected = false;
+            feedbackArea.innerHTML = ''; 
+            nextQuestionBtn.classList.add('hidden');
+            enableAnswerButtons();
+
+            if (currentQuestionIndex < shuffledQuestions.length) {
+                const currentQuestion = shuffledQuestions[currentQuestionIndex];
+                questionEl.textContent = currentQuestion.question;
+                answersEl.innerHTML = ""; 
+
+                currentQuestion.options.forEach(option => {
+                    const button = document.createElement("button");
+                    button.textContent = option;
+                    button.className = "answer-btn w-full text-left p-4 rounded-lg border-2 border-slate-600 hover:border-green-500 hover:bg-slate-700 transition-all duration-150 custom-focus-ring text-slate-200";
+                    button.onclick = () => selectAnswer(button, option, currentQuestion);
+                    answersEl.appendChild(button);
+                });
+                updateProgressBar();
+            } else {
+                showResults();
+            }
+        }
+        
+        function selectAnswer(buttonEl, selectedOption, question) {
+            if (answerSelected) return; 
+            answerSelected = true;
+
+            const isCorrect = selectedOption === question.answer;
+            userAnswers.push({
+                question: question.question,
+                selectedAnswer: selectedOption,
+                correctAnswer: question.answer,
+                isCorrect: isCorrect,
+                explanation: question.explanation // Store explanation
+            });
+
+            let feedbackHTML = '';
+            if (isCorrect) {
+                score++;
+                buttonEl.classList.add('correct');
+                feedbackHTML = `<p class="text-green-400 font-semibold">Correct!</p>`;
+            } else {
+                buttonEl.classList.add('incorrect');
+                feedbackHTML = `<p class="text-red-400 font-semibold">Incorrect. The correct answer is: ${question.answer}</p>`;
+                if (question.explanation) {
+                    feedbackHTML += `<p class="feedback-explanation">${question.explanation}</p>`;
+                }
+                // Highlight the correct answer
+                Array.from(answersEl.children).forEach(btn => {
+                    if (btn.textContent === question.answer) {
+                        btn.classList.add('correct');
+                    }
+                });
+            }
+            feedbackArea.innerHTML = feedbackHTML;
+            disableAnswerButtons();
+            nextQuestionBtn.classList.remove('hidden');
+            nextQuestionBtn.focus(); 
+        }
+
+        function disableAnswerButtons() {
+            Array.from(answersEl.children).forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-70', 'cursor-not-allowed');
+                btn.classList.remove('hover:border-green-500', 'hover:bg-slate-700');
+            });
+        }
+
+        function enableAnswerButtons() {
+             Array.from(answersEl.children).forEach(btn => {
+                btn.disabled = false;
+                btn.classList.remove('opacity-70', 'cursor-not-allowed');
+                btn.classList.add('hover:border-green-500', 'hover:bg-slate-700');
+            });
+        }
+
+
+        nextQuestionBtn.addEventListener('click', () => {
+            currentQuestionIndex++;
+            loadQuestion();
         });
-    </script>
-    <script>
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const isOpen = item.classList.contains('open');
-                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-                if (!isOpen) {
-                    item.classList.add('open');
+
+        function updateProgressBar() {
+            const progressPercentage = (currentQuestionIndex / shuffledQuestions.length) * 100;
+            progressBar.style.width = `${progressPercentage}%`;
+            progressTextEl.textContent = `${currentQuestionIndex}/${shuffledQuestions.length}`;
+        }
+
+        function showResults() {
+            quizContainer.classList.add('hidden'); 
+            resultsContainer.classList.remove('hidden'); 
+            resultsContainer.scrollIntoView({ behavior: 'smooth' });
+
+
+            const percentageScore = (score / shuffledQuestions.length) * 100;
+            scoreEl.textContent = `You scored ${score} out of ${shuffledQuestions.length} (${percentageScore.toFixed(0)}%)`;
+            
+            if (percentageScore >= 80) { // NJ MVC passing score is 80% (40 out of 50)
+                scoreEl.classList.add('text-green-400');
+                scoreEl.classList.remove('text-red-400', 'text-orange-400');
+                passFailMessageEl.textContent = "Congratulations, You Passed!";
+                passFailMessageEl.className = "text-2xl font-bold text-green-400";
+            } else {
+                scoreEl.classList.add('text-red-400');
+                scoreEl.classList.remove('text-green-400', 'text-orange-400');
+                passFailMessageEl.textContent = "Keep Practicing, You Can Do It!";
+                passFailMessageEl.className = "text-2xl font-bold text-red-400";
+
+            }
+
+            wrongListEl.innerHTML = ""; 
+            userAnswers.forEach(item => {
+                const li = document.createElement("li");
+                li.className = `p-4 rounded-md shadow ${item.isCorrect ? 'bg-green-900/30 border-green-500' : 'bg-red-900/30 border-red-500'}`;
+                
+                let content = `<p class="font-semibold text-slate-100">${item.question}</p>
+                               <p class="text-sm ${item.isCorrect ? 'text-green-300' : 'text-red-300'}">Your answer: ${item.selectedAnswer}</p>`;
+                if (!item.isCorrect) {
+                    content += `<p class="text-sm text-green-300">Correct answer: ${item.correctAnswer}</p>`;
+                    if (item.explanation) {
+                         content += `<p class="text-xs text-slate-400 mt-1">${item.explanation}</p>`;
+                    }
+                }
+                li.innerHTML = content;
+                wrongListEl.appendChild(li);
+            });
+        }
+
+        retryBtn.addEventListener("click", initializeQuiz);
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+            mobileMenuButton.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.querySelectorAll('svg').forEach(icon => icon.classList.toggle('hidden'));
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+                mobileMenu.classList.add('hidden');
+                const icons = mobileMenuButton.querySelectorAll('svg');
+                icons[0].classList.remove('hidden'); // Show hamburger
+                icons[1].classList.add('hidden');    // Hide close
+            });
+        });
+
+
+        // --- FAQ Accordion ---
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.closest('.faq-item');
+                faqItem.classList.toggle('open');
+            });
+        });
+        
+        // --- Smooth Scrolling for Nav Links ---
+        document.querySelectorAll('nav a[href^="#"], a[href="#quiz-section"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    if (!mobileMenu.classList.contains('hidden')) { // Check if mobile menu is open
+                         mobileMenuButton.click(); 
+                    }
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
+
+
+        // --- Initialize Quiz on Load ---
+        document.addEventListener('DOMContentLoaded', initializeQuiz);
+
     </script>
 </body>
 </html>
